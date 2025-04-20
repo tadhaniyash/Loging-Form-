@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .container {
+            text-align: center;
+        }
+        .quote-box {
+            background-color: rgb(138, 222, 223);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        #quote {
+            font-size: 24px;
+            font-style: italic;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="quote-box">
+            <p id="quote">"click below to get a random quote!"</p>
+            <button id="new-quote" onclick="display()">New Quote</button>
+        </div>
+    </div>
+    <script>
+        const quote = [
+            "It is hard to fail but it is worse never to have tried to succeed.” —Theodore Roosevelt",
+            "That which does not kill us makes us stronger. —Friedrich Nietzsche",
+            "Success is not final, failure is not fatal: it is the courage to continue that counts. —Winston Churchill",
+            "I hated every minute of training, but I said, ‘Don’t quit. Suffer now and live the rest of your life as a champion.’ —Muhammad Ali",
+            "I’ve missed more than 9000 shots in my career. I’ve lost almost 300 games. 26 times I’ve been trusted to take the game-winning shot and missed. I’ve failed over and over and over again in my life. And that is why I succeed. —Michael Jordan",
+            "The two most important days in your life are the day you are born and the day you find out why. — Mark Twain",
+            "When everything seems to be going against you, remember that the airplane takes off against the wind, not with it. —Henry Ford",
+            "Live each day as if your life had just begun.” —Johann Wolfgang Von Goethe",
+            "The journey of a thousand miles begins with one step. —Lao Tzu",
+            "Do one thing every day that scares you. —Eleanor Roosevelt",
+            "You can waste your lives drawing lines. Or you can live your life crossing them. —Shonda Rhimes",
+            "Never bend your head. Always hold it high. Look the world straight in the eye. —Helen Keller",
+            "My mission in life is not merely to survive, but to thrive.  —Maya Angelou",
+            "The battles that count aren’t the ones for gold medals. The struggles within yourself—the invisible battles inside all of us—that’s where it’s at. —Jesse Owens"
+        ];
+
+        function display() {
+            let x = Math.floor(Math.random() * quote.length);
+            document.getElementById("quote").textContent = quote[x];
+        }
+    </script>
+</body>
+</html>
